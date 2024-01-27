@@ -12,7 +12,7 @@ public class DepressUI : MonoBehaviour
 
     public void Start()
     {
-        playerDepress = FindAnyObjectByType<PlayerDepress>();
+        
     }
 
     public void Update()
@@ -23,6 +23,7 @@ public class DepressUI : MonoBehaviour
 
     public void SliderUpdate()
     {
+        playerDepress = FindAnyObjectByType<PlayerDepress>();
         depressDisplay = (float)playerDepress.depress / playerDepress.maxDepress;
         depressSlider.value = depressDisplay;
     }
