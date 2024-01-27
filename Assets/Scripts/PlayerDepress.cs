@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerDepress : MonoBehaviour
 {
     public event Action<int> DamageEvent;
+    public event Action DeadEvent;
 
     [SerializeField] private SpriteRenderer injuriedRender;
 
@@ -43,6 +44,12 @@ public class PlayerDepress : MonoBehaviour
         }
         DamageEvent?.Invoke(depress);
         injuriedCheck();
+
+        if (depress == 100)
+        {
+            Dead();
+            return;
+        }
         Invoke("EnableHurtCollider", hurtCdTime);
         BlinkPlayerSprite(blinksCount, blinkDurationTime);
     }
@@ -71,8 +78,8 @@ public class PlayerDepress : MonoBehaviour
         myRenderer.enabled = true;
     }
 
-    void Update()
+    public void Dead()
     {
-
+        DeadEvent?.Invoke();
     }
 }

@@ -8,10 +8,11 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Transform startPos;
     [SerializeField] public Volume volume;
+    [SerializeField] private bool vmFollow = true;
 
     private void Start()
     {
-        var player = GameManger.Instance.InitPlayer(startPos);
+        var player = GameManger.Instance.InitPlayer(startPos, vmFollow);
         player.GetComponent<PlayerDepress>().DamageEvent += updateGrayscale;
     }
 

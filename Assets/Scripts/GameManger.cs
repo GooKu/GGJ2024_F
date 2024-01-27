@@ -31,17 +31,21 @@ public class GameManger : MonoBehaviour
 
     public void StartGame()
     {
-        //TODO: inti player data
+        playerData.currentDepress = 0;
         SceneManager.LoadScene("Level_1");
     }
 
-    public GameObject InitPlayer(Transform startPost)
+    public GameObject InitPlayer(Transform startPost, bool vmFollow)
     {
         var player =GameObject.Instantiate(playerSample, startPost.position, Quaternion.identity);
         player.GetComponent<PlayerDepress>().DamageEvent += SetDepress;
-        var vm = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
-        vm.Follow = player.transform;
-        //TODO: set player view
+        player.GetComponent<PlayerDepress>().DeadEvent += playerDeadHandle;
+
+        if (vmFollow)
+        {
+            var vm = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
+            vm.Follow = player.transform;
+        }
         return player;
     }
 
@@ -58,5 +62,10 @@ public class GameManger : MonoBehaviour
     public PlayerData GetPlayerData()
     {
         return playerData;
+    }
+
+    private void playerDeadHandle()
+    {
+        //TODO:play sound, music, show UI
     }
 }

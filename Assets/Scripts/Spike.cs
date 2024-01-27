@@ -9,16 +9,19 @@ public class Spike : MonoBehaviour
 
     void Start()
     {
-        playerDepress = GameObject.FindAnyObjectByType<PlayerDepress>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.PolygonCollider2D")
         {
+            playerDepress = other.GetComponent<PlayerDepress>();
+
+            Debug.Log("Good");
             if(playerDepress)
             {
                 playerDepress.PlayerGetDamage(touchDamage);
+                Debug.Log("Bad");
             }
         }
     }
