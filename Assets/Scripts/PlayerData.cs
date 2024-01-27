@@ -5,4 +5,5 @@ using UnityEngine;
 public class PlayerData
 {
     public int currentDepress = 0;
+    public int currentScream = 0;
 }
