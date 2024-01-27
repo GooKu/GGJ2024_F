@@ -32,9 +32,9 @@ public class PlayerDepress : MonoBehaviour
     {
         playerHurtCollider.enabled = false;
         depress += damage;
-        if(depress > 100)
+        if(depress > maxDepress)
         {
-            depress = 100;
+            depress = maxDepress;
         }
         DamageEvent?.Invoke(depress);
         Invoke("EnableHurtCollider", hurtCdTime);

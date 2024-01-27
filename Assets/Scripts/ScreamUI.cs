@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScreamUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private ScreamItem screamItem;
+
+    public Slider screamSlider;
+    private float screamDisplay;
+
+    public void Start()
     {
-        
+        screamItem = FindAnyObjectByType<ScreamItem>();
+        //scream = GameManger.Instance.GetPlayerData().currentScream;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        SliderUpdate();
+        //Debug.Log(screamDisplay);
+    }
+
+    public void SliderUpdate()
+    {
+        screamDisplay = (float)screamItem.scream / screamItem.maxScream;
+        screamSlider.value = screamDisplay;
     }
 }
