@@ -66,6 +66,10 @@ public class GameManger : MonoBehaviour
 
     private void playerDeadHandle()
     {
-        //TODO:play sound, music, show UI
+        var endingDisplay = GameObject.FindFirstObjectByType<EndingDisplay>();
+        if (endingDisplay != null) 
+        {
+            endingDisplay.EndingUIDisplay(playerData.currentDepress);
+        }
     }
 }
