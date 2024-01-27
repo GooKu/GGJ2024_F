@@ -12,10 +12,6 @@ public class SwordSpawn : MonoBehaviour
     public int intervalEnd = 100;
     private int genNum = 7;
 
-    private void Start()
-    {
-        transform.position = swordPrefab.transform.position;
-    }
     private void Update()
     {
         SowrdsSpawn();
