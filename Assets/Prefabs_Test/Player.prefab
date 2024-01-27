@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8276218272169693574}
   - component: {fileID: 9148899914846786254}
   - component: {fileID: 5530280655915512132}
-  - component: {fileID: 8170616770831478121}
+  - component: {fileID: 6753425078310847111}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -168,16 +168,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 10
---- !u!114 &8170616770831478121
+--- !u!114 &6753425078310847111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2742421012147006499}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62e96580c0aa3f84f9215405e9680b5a, type: 3}
+  m_Script: {fileID: 11500000, guid: e605559e28367eb4b86245de353458b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  depress: 0
+  maxDepress: 100
+  hurtCdTime: 1
+  blinksCount: 2
+  blinkDurationTime: 0.1

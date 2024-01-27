@@ -22,6 +22,7 @@ public class PlayerDepress : MonoBehaviour
     }
     void Start()
     {
+        depress = GameManger.Instance.GetDepress();
     }
 
     public void PlayerGetDamage(int damage)
