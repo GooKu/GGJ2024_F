@@ -35,13 +35,16 @@ public class GameManger : MonoBehaviour
         SceneManager.LoadScene("Level_1");
     }
 
-    public GameObject InitPlayer(Transform startPost)
+    public GameObject InitPlayer(Transform startPost, bool vmFollow)
     {
         var player =GameObject.Instantiate(playerSample, startPost.position, Quaternion.identity);
         player.GetComponent<PlayerDepress>().DamageEvent += SetDepress;
-        var vm = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
-        vm.Follow = player.transform;
-        //TODO: set player view
+
+        if (vmFollow)
+        {
+            var vm = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
+            vm.Follow = player.transform;
+        }
         return player;
     }
 
