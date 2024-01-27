@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.43, y: 0.68, z: 0}
-  m_LocalScale: {x: 4.864507, y: 0.30871776, z: 0.4317731}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -7973448677500293571, guid: 6c9890ad8cd46874fbe130e4d8ae2ed9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,17 +124,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 1
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03010559, y: -0.19705582}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4.18, y: 0.78}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.086994, y: 0.21177626}
   m_EdgeRadius: 0
 --- !u!50 &2821097824321499287
 Rigidbody2D:
@@ -204,20 +204,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 38650466188283302}
     m_ColliderPaths:
-    - - X: 24322536
-        Y: 1543588
-      - X: -24322536
-        Y: 1543588
-      - X: -24322536
-        Y: -1543588
-      - X: 24322536
-        Y: -1543588
+    - - X: 20133914
+        Y: -911676
+      - X: -20736026
+        Y: -911676
+      - X: -20736026
+        Y: -3029439
+      - X: 20133914
+        Y: -3029439
   m_CompositePaths:
     m_Paths:
-    - - {x: 2.4322245, y: -0.1543588}
-      - {x: 2.4322245, y: 0.1543588}
-      - {x: -2.4322536, y: 0.15432951}
-      - {x: -2.4322245, y: -0.1543588}
+    - - {x: 2.013362, y: -0.30294392}
+      - {x: 2.013362, y: -0.0911676}
+      - {x: -2.0736027, y: -0.0911969}
+      - {x: -2.073573, y: -0.30294392}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
