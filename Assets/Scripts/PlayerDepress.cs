@@ -7,6 +7,8 @@ public class PlayerDepress : MonoBehaviour
 {
     public event Action<int> DamageEvent;
 
+    [SerializeField] private SpriteRenderer injuriedRender;
+
     public int depress = 0;
     public int maxDepress = 100;
     public float hurtCdTime;
@@ -26,6 +28,7 @@ public class PlayerDepress : MonoBehaviour
     void Start()
     {
         depress = GameManger.Instance.GetDepress();
+        injuriedCheck();
     }
 
     public void PlayerGetDamage(int damage)
@@ -37,8 +40,14 @@ public class PlayerDepress : MonoBehaviour
             depress = 100;
         }
         DamageEvent?.Invoke(depress);
+        injuriedCheck();
         Invoke("EnableHurtCollider", hurtCdTime);
         BlinkPlayerSprite(blinksCount, blinkDurationTime);
+    }
+
+    private void injuriedCheck()
+    {
+        injuriedRender.enabled = depress != 0;
     }
 
     void EnableHurtCollider()

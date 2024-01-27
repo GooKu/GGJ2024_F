@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRB;
     private bool isGrounded;
 
-    [Header("View")]
     private SpriteRenderer render;
+    [SerializeField] private SpriteRenderer injuriedRender;
     private Animator anim;
 
     void Start()
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             anim.Play("Walk");
-            render.flipX = horizontalInput < 0 ? true : false;
+            render.flipX = injuriedRender.flipX = horizontalInput < 0 ? true : false;
         }
     }
 
