@@ -24,7 +24,7 @@ public class ScreamUI : MonoBehaviour
 
     public void SliderUpdate()
     {
-        screamDisplay = (float)screamItem.scream / screamItem.maxScream;
+        //screamDisplay = (float)screamItem.scream / screamItem.maxScream;
         screamSlider.value = screamDisplay;
     }
 }
