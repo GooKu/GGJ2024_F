@@ -46,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            PlayerData.currentDepress += 20f;
+            var value = GameManger.Instance.GetDepress() + 20;
+            GameManger.Instance.SetDepress(value);
         }
     }
 

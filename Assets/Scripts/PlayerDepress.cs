@@ -22,7 +22,7 @@ public class PlayerDepress : MonoBehaviour
     }
     void Start()
     {
-        PlayerData.currentDepress = depress;
+        depress = GameManger.Instance.GetDepress();
     }
 
     public void PlayerGetDamage(int damage)
@@ -33,7 +33,7 @@ public class PlayerDepress : MonoBehaviour
         {
             depress = 100;
         }
-        PlayerData.currentDepress = depress;
+        GameManger.Instance.SetDepress(depress);
         Invoke("EnableHurtCollider", hurtCdTime);
         BlinkPlayerSprite(blinksCount, blinkDurationTime);
     }
