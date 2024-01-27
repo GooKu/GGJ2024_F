@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Obstacle
+  - Left_Sword
+  - Right_Sword
   layers:
   - Default
   - TransparentFX
