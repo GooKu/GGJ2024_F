@@ -16,9 +16,11 @@ public class Spike : MonoBehaviour
     {
         if(other.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.PolygonCollider2D")
         {
+            Debug.Log("Good");
             if(playerDepress)
             {
                 playerDepress.PlayerGetDamage(touchDamage);
+                Debug.Log("Bad");
             }
         }
     }
