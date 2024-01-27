@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 10f, doubleJumpForce = 15f;
+    public float jumpForce = 7f, doubleJumpForce = 8f;
 
     private Rigidbody2D playerRB;
     private bool isGrounded, canDoubleJump;
@@ -29,36 +29,55 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        Vector2 moveDirection = new Vector2(horizontalInput, 0f);
-        playerRB.velocity = new Vector2(moveDirection.x * moveSpeed, playerRB.velocity.y);
+        float moveDir = Input.GetAxis("Horizontal");
 
-        if(horizontalInput == 0)
+        if( Mathf.Abs(moveDir) > 0.2f)
+        {
+            Vector2 playerVel = new Vector2(moveDir * moveSpeed, playerRB.velocity.y);
+            playerRB.velocity = playerVel;
+        }
+
+        else
+        {
+            playerRB.velocity = new Vector2(0, playerRB.velocity.y);
+        }
+        
+        if(moveDir == 0)
         {
             anim.Play("Idle");
         }
         else
         {
             anim.Play("Walk");
-            render.flipX = injuriedRender.flipX = horizontalInput < 0 ? true : false;
+            render.flipX = injuriedRender.flipX = moveDir < 0 ? true : false;
         }
     }
 
     public void Jump()
     {
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump"))
         {
-            Vector2 jumpSpeed = new Vector2(0f, jumpForce);
-            playerRB.velocity = Vector2.up * jumpSpeed;
-        }
+            if (isGrounded)
+            {
+                Vector2 jumpVel = new Vector2(0f, jumpForce);
+                playerRB.velocity = Vector2.up * jumpVel;
+                canDoubleJump = true;
+            }
 
-        else
-        {
-            if (canDoubleJump)
+            else if (canDoubleJump && canDoubleJump)
             {
                 DoubleJump();
+                canDoubleJump = false;
             }
         }
+
+        
+    }
+
+    void DoubleJump()
+    {
+        Vector2 doubleJumpVel = new Vector2(0.0f, doubleJumpForce);
+        playerRB.velocity = Vector2.up * doubleJumpVel;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -81,12 +100,5 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
-    }
-    
-    void DoubleJump()
-    {
-        Vector2 doubleJumpVel = new Vector2(0.0f, doubleJumpForce);
-        playerRB.velocity = Vector2.up * doubleJumpVel;
-        canDoubleJump = false;
     }
 }
