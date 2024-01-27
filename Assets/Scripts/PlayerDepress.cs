@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDepress : MonoBehaviour
 {
+    public event Action<int> DamageEvent;
+
     public int depress = 0;
     public int maxDepress = 100;
     public float hurtCdTime;
@@ -33,7 +36,7 @@ public class PlayerDepress : MonoBehaviour
         {
             depress = 100;
         }
-        GameManger.Instance.SetDepress(depress);
+        DamageEvent?.Invoke(depress);
         Invoke("EnableHurtCollider", hurtCdTime);
         BlinkPlayerSprite(blinksCount, blinkDurationTime);
     }
