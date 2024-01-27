@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class PlayerData
 {
-    //TODO
+    public static float currentDepress = 0f;
+    
+
 }
