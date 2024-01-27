@@ -10,9 +10,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRB;
     private bool isGrounded;
 
+    [Header("View")]
+    private SpriteRenderer render;
+    private Animator anim;
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        render = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -26,6 +32,16 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 moveDirection = new Vector2(horizontalInput, 0f);
         playerRB.velocity = new Vector2(moveDirection.x * moveSpeed, playerRB.velocity.y);
+
+        if(horizontalInput == 0)
+        {
+            anim.Play("Idle");
+        }
+        else
+        {
+            anim.Play("Walk");
+            render.flipX = horizontalInput < 0 ? true : false;
+        }
     }
 
     public void Jump()
