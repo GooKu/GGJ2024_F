@@ -31,7 +31,7 @@ public class GameManger : MonoBehaviour
 
     public void StartGame()
     {
-        //TODO: inti player data
+        playerData.currentDepress = 0;
         SceneManager.LoadScene("Level_1");
     }
 
@@ -39,6 +39,7 @@ public class GameManger : MonoBehaviour
     {
         var player =GameObject.Instantiate(playerSample, startPost.position, Quaternion.identity);
         player.GetComponent<PlayerDepress>().DamageEvent += SetDepress;
+        player.GetComponent<PlayerDepress>().DeadEvent += playerDeadHandle;
 
         if (vmFollow)
         {
@@ -61,5 +62,10 @@ public class GameManger : MonoBehaviour
     public PlayerData GetPlayerData()
     {
         return playerData;
+    }
+
+    private void playerDeadHandle()
+    {
+        //TODO:play sound, music, show UI
     }
 }
