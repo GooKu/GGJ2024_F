@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed5f5f3899d7f64d939082e2a56a58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeScream: 0
+  scream: 0
   maxScream: 100
 --- !u!58 &632148416004730682
 CircleCollider2D:
@@ -132,7 +132,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
