@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//test
+using System;
+
 public class GameManger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManger Instance;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        //TODO
+    }
+
+    public PlayerData GetPlayerData()
+    {
+        throw new NotImplementedException();
     }
 }
