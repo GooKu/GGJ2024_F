@@ -17,7 +17,8 @@ public class PlayerDepress : MonoBehaviour
     private Renderer myRenderer;
     private PolygonCollider2D playerHurtCollider;
 
-    public static PlayerDepress instance; 
+    public static PlayerDepress instance;
+    public static bool failEndActivated = false;
     
     void Awake()
     {
@@ -35,9 +36,10 @@ public class PlayerDepress : MonoBehaviour
     {
         playerHurtCollider.enabled = false;
         depress += damage;
-        if(depress > maxDepress)
+        if(depress >= maxDepress)
         {
             depress = maxDepress;
+            failEndActivated = true;
         }
         DamageEvent?.Invoke(depress);
         injuriedCheck();

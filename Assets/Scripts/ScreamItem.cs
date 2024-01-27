@@ -5,16 +5,18 @@ using UnityEngine;
 public class ScreamItem : MonoBehaviour
 {
     public static int changeScream = 20;
-    public int scream = 0, maxScream = 100;
+    public int scream, maxScream = 100;
 
     private void Start()
     {
-        //scream = GameManger.Instance.GetPlayerData().currentScream;   
+          
     }
 
     private void Update()
     {
-        if( scream >= maxScream)
+        scream = GameManger.Instance.GetPlayerData().currentScream;
+
+        if ( scream >= maxScream)
         {
             scream = maxScream;
         }    

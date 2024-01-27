@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 10f, doubleJumpForce = 15f;
 
     private Rigidbody2D playerRB;
-    private bool isGrounded;
+    private bool isGrounded, canDoubleJump;
 
     private SpriteRenderer render;
     [SerializeField] private SpriteRenderer injuriedRender;
@@ -51,6 +51,14 @@ public class PlayerMovement : MonoBehaviour
             Vector2 jumpSpeed = new Vector2(0f, jumpForce);
             playerRB.velocity = Vector2.up * jumpSpeed;
         }
+
+        else
+        {
+            if (canDoubleJump)
+            {
+                DoubleJump();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -73,5 +81,12 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+    
+    void DoubleJump()
+    {
+        Vector2 doubleJumpVel = new Vector2(0.0f, doubleJumpForce);
+        playerRB.velocity = Vector2.up * doubleJumpVel;
+        canDoubleJump = false;
     }
 }
