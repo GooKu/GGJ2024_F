@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class ScreamItem : MonoBehaviour
 {
-    public static int changeScream = 20;
-    public int scream, maxScream = 100;
+    public int scream, touchAdd = 20;
+    public ScreamUI screamUI;
 
     private void Start()
     {
-          
+        screamUI = FindAnyObjectByType<ScreamUI>();
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        scream = GameManger.Instance.GetPlayerData().currentScream;
-
-        if ( scream >= maxScream)
+        if (other.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.PolygonCollider2D")
         {
-            scream = maxScream;
-        }    
-    }
+            scream += touchAdd;
+            screamUI.SliderUpdate();
+            
+            GameManger.Instance.GetPlayerData().currentScream += scream;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if( collision.CompareTag("Player")) //&& collision.GetType().ToString() == "UnityEngine.CapsuleCollider2D"
-        {
-            scream += changeScream;
+            Debug.Log("S" + GameManger.Instance.GetPlayerData().currentScream);
+            Debug.Log("D" + GameManger.Instance.GetPlayerData().currentDepress);
             Destroy(gameObject);
         }
     }

@@ -1694,6 +1694,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.999996
       objectReference: {fileID: 0}
+    - target: {fileID: 3080895723798512019, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4865463305109427914, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
       propertyPath: m_Name
       value: Canvas(ScoreUI)
@@ -4389,7 +4393,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -651421095
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -416905216759357025, guid: 2833e186fbe6e394c876b6de1e731bd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4575,7 +4579,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -651421095
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -416905216759357025, guid: 2833e186fbe6e394c876b6de1e731bd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -6,14 +6,21 @@ public class EndingDisplay : MonoBehaviour
 {
     public GameObject FailEndUI, GoodEndUI, NormalEnd;
 
+    private void Start()
+    {
+        NormalEnd.SetActive(false);
+        FailEndUI.SetActive(false);
+        GoodEndUI.SetActive(false);
+    }
+
     public void EndingUIDisplay(int depressScore)
     {
-        NormalEnd.SetActive(depressScore > 0);
-        FailEndUI.SetActive(depressScore >= 100);
+        NormalEnd.SetActive(depressScore > 0 && depressScore < 100);
         GoodEndUI.SetActive(depressScore <= 0);
-        
-        FailEndUI.SetActive(FailEndUI.activeSelf && !(depressScore >= 100));
-        GoodEndUI.SetActive(GoodEndUI.activeSelf && !(depressScore <= 0));
-        NormalEnd.SetActive(NormalEnd.activeSelf && !FailEndUI.activeSelf && !GoodEndUI.activeSelf);
+    }
+
+    public void FailUIDisplay(int endScore)
+    {
+        FailEndUI.SetActive(endScore >= 100);
     }
 }
