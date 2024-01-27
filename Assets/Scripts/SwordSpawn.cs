@@ -11,7 +11,11 @@ public class SwordSpawn : MonoBehaviour
     public int intervalStart = 0;
     public int intervalEnd = 100;
     private int genNum = 7;
-    
+
+    private void Start()
+    {
+        transform.position = swordPrefab.transform.position;
+    }
     private void Update()
     {
         SowrdsSpawn();
@@ -23,8 +27,8 @@ public class SwordSpawn : MonoBehaviour
 
         if( num == genNum)
         {
-            Instantiate(swordPrefab, transform.position, transform.rotation);
-            swordPrefab.transform.parent = null;
+            GameObject swords = Instantiate(swordPrefab, transform.position, transform.rotation);
+            //swordPrefab.transform.parent = null;
         }
     }
 }

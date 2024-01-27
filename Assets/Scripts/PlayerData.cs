@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class PlayerData
 {
-    public float currentDepress = 50f;
-
-    public float currentAudienceVal = 100f;
-
+    public int currentDepress = 0;
 }

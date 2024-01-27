@@ -32,7 +32,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            Vector2 jumpSpeed = new Vector2(0f, jumpForce);
+            playerRB.velocity = Vector2.up * jumpSpeed;
         }
     }
 
@@ -45,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            //PlayerData.currentDepress += 20f;
+            var value = GameManger.Instance.GetDepress() + 20;
+            GameManger.Instance.SetDepress(value);
         }
     }
 

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7053042334365933196}
-  - component: {fileID: 8466009965877800259}
   - component: {fileID: 7142208335751234162}
   m_Layer: 0
   m_Name: SwordSpawner
@@ -33,21 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8466009965877800259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334283805525069236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff01041bbb17b2340a26cb6f403c292f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordPrefab: {fileID: 4271302220705707865, guid: 3da406ee41e51014fbddc66bdaeb094e, type: 3}
-  intervalStart: 0
-  intervalEnd: 100
 --- !u!114 &7142208335751234162
 MonoBehaviour:
   m_ObjectHideFlags: 0
