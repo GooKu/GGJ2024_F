@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemiesHealthBar : MonoBehaviour
+public class DepressUI : MonoBehaviour
 { 
     public Slider slider;
     private float valueDisplay;
     private float fullDepress;
-    public PlayerData playerData;
-
-    //public GameObject healthBarUI;
-    //public Camera cam;
 
     private void Update()
     {
@@ -20,12 +16,8 @@ public class EnemiesHealthBar : MonoBehaviour
     
     public void UpdateSlider()
     {
-
-        valueDisplay = PlayerData.currentDepress / fullDepress;
+        valueDisplay = GameManger.Instance.GetPlayerData().currentDepress / fullDepress;
         slider.value = valueDisplay;
     }
-
-    
-    
 }
 

@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            PlayerData.currentDepress += 20f;
+            //PlayerData.currentDepress += 20f;
         }
     }
 
