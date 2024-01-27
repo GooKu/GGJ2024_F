@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//tttt
+//tttt test
 public class GameManger : MonoBehaviour
 {
     // Start is called before the first frame update
