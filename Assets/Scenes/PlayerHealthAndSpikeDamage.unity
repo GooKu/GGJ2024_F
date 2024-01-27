@@ -509,6 +509,8 @@ MonoBehaviour:
   depress: 0
   maxDepress: 100
   hurtCdTime: 1
+  blinksCount: 2
+  blinkDurationTime: 0.1
 --- !u!60 &2038354524
 PolygonCollider2D:
   m_ObjectHideFlags: 0

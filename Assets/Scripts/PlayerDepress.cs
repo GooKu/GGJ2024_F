@@ -8,7 +8,7 @@ public class PlayerDepress : MonoBehaviour
     public int maxDepress = 100;
     public float hurtCdTime;
     public int blinksCount;
-    public float durationTime;
+    public float blinkDurationTime;
     private Renderer myRenderer;
     private PolygonCollider2D playerHurtCollider;
 
@@ -35,7 +35,7 @@ public class PlayerDepress : MonoBehaviour
         }
         PlayerData.currentDepress = depress;
         Invoke("EnableHurtCollider", hurtCdTime);
-        // BlinkPlayerSprite();
+        BlinkPlayerSprite(blinksCount, blinkDurationTime);
     }
 
     void EnableHurtCollider()
