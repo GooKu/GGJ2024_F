@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Cinemachine;
 
 public class GameManger : MonoBehaviour
 {
     public static GameManger Instance;
+
+    [SerializeField] private GameObject playerSample;
+
+    private PlayerData playerData;
 
     private void Awake()
     {
@@ -19,6 +24,8 @@ public class GameManger : MonoBehaviour
             DestroyImmediate(gameObject);
             return;
         }
+
+        playerData = new();
     }
 
     public void StartGame()
@@ -26,8 +33,15 @@ public class GameManger : MonoBehaviour
         //TODO
     }
 
+    public void InitPlayer(Transform startPost)
+    {
+        var player =GameObject.Instantiate(playerSample, startPost.position, Quaternion.identity);
+        var vm = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
+        vm.Follow = player.transform;
+    }
+
     public PlayerData GetPlayerData()
     {
-        throw new NotImplementedException();
+        return playerData;
     }
 }
