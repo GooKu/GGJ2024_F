@@ -37,6 +37,7 @@ public class GameManger : MonoBehaviour
     public void StartGame()
     {
         playerData.currentDepress = 0;
+        playerData.currentScream = 0;
         SceneManager.LoadScene("Level_1");
     }
 
@@ -71,19 +72,15 @@ public class GameManger : MonoBehaviour
 
     private void playerDeadHandle()
     {
-        GameObject.FindFirstObjectByType<PlayerMovement>().enabled = false;
-
-        var endingDisplay = GameObject.FindFirstObjectByType<EndingDisplay>();
-        if (endingDisplay != null) 
-        {
-            endingDisplay.EndingUIDisplay(playerData.currentDepress);
-        }
-
-        audioSource.clip = deathBGM;
-        audioSource.Play();
+        endHandle(deathBGM);
     }
 
     public void GameEnd()
+    {
+        endHandle(endBGM);
+    }
+
+    private void endHandle(AudioClip bgm)
     {
         GameObject.FindFirstObjectByType<PlayerMovement>().enabled = false;
 
@@ -95,8 +92,7 @@ public class GameManger : MonoBehaviour
         {
             endingDisplay.EndingUIDisplay(playerData.currentDepress);
         }
-
-        audioSource.clip = endBGM;
+        audioSource.clip = bgm;
         audioSource.Play();
     }
 }
