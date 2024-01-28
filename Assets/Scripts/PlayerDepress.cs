@@ -45,7 +45,7 @@ public class PlayerDepress : MonoBehaviour
         DamageEvent?.Invoke(depress);
         injuriedCheck();
 
-        if (depress == 100)
+        if (depress == maxDepress)
         {
             Dead();
             return;
