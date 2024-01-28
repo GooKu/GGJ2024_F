@@ -13,7 +13,7 @@ public class ScreamUI : MonoBehaviour
     private void Update()
     {
         SliderUpdate();
-        Debug.Log("scream = " + scream);
+        //Debug.Log("scream = " + scream);
     }
 
     public void SliderUpdate()
@@ -22,5 +22,8 @@ public class ScreamUI : MonoBehaviour
         //screamDisplay = (float)GameManger.Instance.GetPlayerData().currentScream / maxScream;
 
         screamSlider.value = screamDisplay;
+
+        GameManger.Instance.GetPlayerData().currentScream = scream;
+        //Debug.Log("CS ="+ GameManger.Instance.GetPlayerData().currentScream);
     }
 }
