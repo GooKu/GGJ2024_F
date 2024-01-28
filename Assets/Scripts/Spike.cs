@@ -6,6 +6,7 @@ public class Spike : MonoBehaviour
 {
     public int touchDamage;
     private PlayerDepress playerDepress;
+    private ScreamUI screamUI;
 
     void Start()
     {
@@ -16,9 +17,17 @@ public class Spike : MonoBehaviour
         if(other.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.PolygonCollider2D")
         {
             playerDepress = other.GetComponent<PlayerDepress>();
+            screamUI = FindAnyObjectByType<ScreamUI>();
+
             if(playerDepress)
             {
                 playerDepress.PlayerGetDamage(touchDamage);
+            }
+
+            if (screamUI)
+            {
+                screamUI.scream += 20;
+                screamUI.SliderUpdate();
             }
         }
     }
