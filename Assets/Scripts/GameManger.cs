@@ -46,6 +46,7 @@ public class GameManger : MonoBehaviour
         var player =GameObject.Instantiate(playerSample, startPost.position, Quaternion.identity);
         player.GetComponent<PlayerDepress>().DamageEvent += SetDepress;
         player.GetComponent<PlayerDepress>().DeadEvent += playerDeadHandle;
+        player.GetComponent<PlayerDepress>().PlaySoundEvent += playSoundHandle;
 
         if (vmFollow)
         {
@@ -73,11 +74,26 @@ public class GameManger : MonoBehaviour
     private void playerDeadHandle()
     {
         endHandle(deathBGM);
+        var endingDisplay = GameObject.FindFirstObjectByType<EndingDisplay>();
+        if (endingDisplay != null)
+        {
+            endingDisplay.FailUIDisplay();
+        }
     }
 
     public void GameEnd()
     {
         endHandle(endBGM);
+        var endingDisplay = GameObject.FindFirstObjectByType<EndingDisplay>();
+        if (endingDisplay != null)
+        {
+            endingDisplay.EndingUIDisplay(playerData.currentDepress);
+        }
+    }
+
+    private void playSoundHandle()
+    {
+        GameObject.FindFirstObjectByType<LaughAnimeDisplay>().LaughAnimeRun();
     }
 
     private void endHandle(AudioClip bgm)
@@ -87,11 +103,6 @@ public class GameManger : MonoBehaviour
         var levelManager = GameObject.FindFirstObjectByType<LevelManager>();
         levelManager.End();
 
-        var endingDisplay = GameObject.FindFirstObjectByType<EndingDisplay>();
-        if (endingDisplay != null)
-        {
-            endingDisplay.EndingUIDisplay(playerData.currentDepress);
-        }
         audioSource.clip = bgm;
         audioSource.Play();
     }
