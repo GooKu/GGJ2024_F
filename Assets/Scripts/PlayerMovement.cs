@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Space key pressed");
             if (isGrounded)
             {
                 Vector2 jumpVel = new Vector2(0f, jumpForce);
