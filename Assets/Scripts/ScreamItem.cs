@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScreamItem : MonoBehaviour
 {
-    public static int touchAdd = 5;
+    public static int touchAdd = 20;
     private ScreamUI screamUI;
 
     private void Start()
