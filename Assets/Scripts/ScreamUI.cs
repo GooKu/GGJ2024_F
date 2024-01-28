@@ -23,6 +23,6 @@ public class ScreamUI : MonoBehaviour
         screamSlider.value = screamDisplay;
 
         GameManger.Instance.GetPlayerData().currentScream = scream;
-        Debug.Log("CS ="+ GameManger.Instance.GetPlayerData().currentScream);
+        //Debug.Log("CS ="+ GameManger.Instance.GetPlayerData().currentScream);
     }
 }
