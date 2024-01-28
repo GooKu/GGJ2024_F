@@ -670,6 +670,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3215160032105774508, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
+      propertyPath: run
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4865463305109427914, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
       propertyPath: m_Name
       value: Canvas(ScoreUI)
@@ -1021,7 +1025,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8522196, y: 2.5295599, z: -10}
+  m_LocalPosition: {x: 5.4485106, y: 2.53863, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
