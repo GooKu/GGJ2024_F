@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 967d0b88b08a06148a2e0bee62f8e2c5
+guid: b88022bccfc1ea441b3047a5b3c0b97b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8857434145877087773
-    second: FinishGoal_0
+      213: -820899930900480395
+    second: MakeWeLaugh_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FinishGoal_0
+      name: MakeWeLaugh_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 0
-        width: 959
-        height: 723
+        x: 50
+        y: 34
+        width: 935
+        height: 615
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d165b6e4d6debea70800000000000000
-      internalID: 8857434145877087773
+      spriteID: 57eb886bcd39b94f0800000000000000
+      internalID: -820899930900480395
       vertices: []
       indices: 
       edges: []
@@ -131,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FinishGoal_0: 8857434145877087773
+      MakeWeLaugh_0: -820899930900480395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

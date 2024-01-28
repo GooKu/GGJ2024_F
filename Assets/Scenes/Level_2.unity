@@ -184,12 +184,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 761853301509534135, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.185
+      objectReference: {fileID: 0}
     - target: {fileID: 4865463305109427914, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
       propertyPath: m_Name
       value: Canvas(ScoreUI)
       objectReference: {fileID: 0}
     - target: {fileID: 5071406686014655900, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290591425219578642, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6653654805405842419, guid: 84331e70b0b6d41499ecdd34323ea0d1, type: 3}
