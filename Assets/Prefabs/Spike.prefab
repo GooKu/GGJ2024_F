@@ -150,4 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ff3da725d1c0f4888400cc936f492d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchDamage: 5
+  touchDamage: 20
