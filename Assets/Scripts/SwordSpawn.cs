@@ -5,8 +5,6 @@ using UnityEngine;
 public class SwordSpawn : MonoBehaviour
 {
     public GameObject swordPrefab;
-    //public Transform player;
-    //public Transform spawner;
 
     public int intervalStart = 0;
     public int intervalEnd = 100;
