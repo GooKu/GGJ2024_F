@@ -19,9 +19,8 @@ public class ScreamItem : MonoBehaviour
         {
             screamUI.scream += touchAdd;
 
-            GameManger.Instance.GetPlayerData().currentScream += touchAdd;
-
-            Debug.Log("Current Scream " + GameManger.Instance.GetPlayerData().currentScream);
+            //GameManger.Instance.GetPlayerData().currentScream += touchAdd;
+            //Debug.Log("Current Scream " + GameManger.Instance.GetPlayerData().currentScream);
             
             Destroy(gameObject);
         }
