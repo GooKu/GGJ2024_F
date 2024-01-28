@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerDepress : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class PlayerDepress : MonoBehaviour
     public event Action DeadEvent;
 
     [SerializeField] private SpriteRenderer injuriedRender;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] damageClips;
 
     public int depress = 0;
     public int maxDepress = 100;
@@ -20,7 +24,11 @@ public class PlayerDepress : MonoBehaviour
 
     public static PlayerDepress instance;
     public static bool failEndActivated = false;
-    
+
+    private readonly float soundPlaySpacing = 3;
+    private bool soundCoolDown;
+    private int soundIndex = 0;
+
     void Awake()
     {
         instance = this;
@@ -35,6 +43,16 @@ public class PlayerDepress : MonoBehaviour
 
     public void PlayerGetDamage(int damage)
     {
+        if(soundCoolDown)
+        {
+            audioSource.PlayOneShot(damageClips[soundIndex]);
+            soundIndex  = soundIndex + 1;
+            if(soundIndex >= damageClips.Length)
+            {
+                soundIndex = 0;
+            }
+            StartCoroutine(coolDownSoundPlay());
+        }
         playerHurtCollider.enabled = false;
         depress += damage;
         if(depress >= maxDepress)
@@ -54,6 +72,13 @@ public class PlayerDepress : MonoBehaviour
         }
         Invoke("EnableHurtCollider", hurtCdTime);
         BlinkPlayerSprite(blinksCount, blinkDurationTime);
+    }
+
+    private IEnumerator coolDownSoundPlay()
+    {
+        soundCoolDown = true;
+        yield return new WaitForSeconds(soundPlaySpacing);
+        soundCoolDown = false;
     }
 
     private void injuriedCheck()
