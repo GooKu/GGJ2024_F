@@ -8,11 +8,12 @@ using UnityEngine.Audio;
 public class PlayerDepress : MonoBehaviour
 {
     public event Action<int> DamageEvent;
+    public event Action PlaySoundEvent;
     public event Action DeadEvent;
 
     [SerializeField] private SpriteRenderer injuriedRender;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip[] damageClips;
+    [SerializeField] private AudioClip damageClip;
 
     public int depress = 0;
     public int maxDepress = 100;
@@ -27,7 +28,6 @@ public class PlayerDepress : MonoBehaviour
 
     private readonly float soundPlaySpacing = 3;
     private bool soundCoolDown;
-    private int soundIndex = 0;
 
     void Awake()
     {
@@ -45,13 +45,9 @@ public class PlayerDepress : MonoBehaviour
     {
         if(soundCoolDown)
         {
-            audioSource.PlayOneShot(damageClips[soundIndex]);
-            soundIndex  = soundIndex + 1;
-            if(soundIndex >= damageClips.Length)
-            {
-                soundIndex = 0;
-            }
+            audioSource.PlayOneShot(damageClip);
             StartCoroutine(coolDownSoundPlay());
+            PlaySoundEvent?.Invoke();
         }
         playerHurtCollider.enabled = false;
         depress += damage;
