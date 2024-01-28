@@ -260,10 +260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   injuriedRender: {fileID: 2057704910299615732}
-  audioSource: {fileID: 0}
-  damageClips:
-  - {fileID: 8300000, guid: 3b8146fb61db9074e9ea880979d7b34d, type: 3}
-  - {fileID: 8300000, guid: 7fa9e8f49914a6048b56836c78accc58, type: 3}
+  audioSource: {fileID: 6051537576379057319}
+  damageClip: {fileID: 8300000, guid: 3b8146fb61db9074e9ea880979d7b34d, type: 3}
   depress: 0
   maxDepress: 100
   hurtCdTime: 1
