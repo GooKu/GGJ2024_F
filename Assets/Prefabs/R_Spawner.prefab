@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordPrefab: {fileID: 4030384286936621591, guid: 3da406ee41e51014fbddc66bdaeb094e, type: 3}
   intervalStart: 0
-  intervalEnd: 100
+  intervalEnd: 300
