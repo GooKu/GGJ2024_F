@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScreamUI : MonoBehaviour
 {
     public Slider screamSlider;
-    public int scream = 0;
+    public  int scream = 0;
     private int maxScream = 100;
     public float screamDisplay;
 
@@ -18,7 +18,7 @@ public class ScreamUI : MonoBehaviour
 
     public void SliderUpdate()
     {
-        screamDisplay = (float)scream / maxScream;
+        screamDisplay = (float) scream / maxScream;
         //screamDisplay = (float)GameManger.Instance.GetPlayerData().currentScream / maxScream;
 
         screamSlider.value = screamDisplay;

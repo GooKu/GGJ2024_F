@@ -4,12 +4,16 @@ using UnityEngine;
 using System;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameManger : MonoBehaviour
 {
     public static GameManger Instance;
 
     [SerializeField] private GameObject playerSample;
+    [Header("Sound")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip stageBGM;
 
     private PlayerData playerData;
 
@@ -46,6 +50,8 @@ public class GameManger : MonoBehaviour
             var vm = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
             vm.Follow = player.transform;
         }
+        audioSource.clip = stageBGM;
+        audioSource.Play();
         return player;
     }
 
@@ -72,4 +78,5 @@ public class GameManger : MonoBehaviour
             endingDisplay.EndingUIDisplay(playerData.currentDepress);
         }
     }
+
 }
