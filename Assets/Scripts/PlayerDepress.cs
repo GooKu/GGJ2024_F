@@ -47,7 +47,7 @@ public class PlayerDepress : MonoBehaviour
 
         injuriedCheck();
 
-        if (depress == 100)
+        if (depress == maxDepress)
         {
             Dead();
             return;

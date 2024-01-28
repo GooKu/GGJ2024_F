@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             if (isGrounded)
             {
