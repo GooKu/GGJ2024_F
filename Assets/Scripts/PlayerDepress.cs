@@ -104,5 +104,6 @@ public class PlayerDepress : MonoBehaviour
     public void Dead()
     {
         DeadEvent?.Invoke();
+        Destroy(gameObject);
     }
 }
