@@ -109,7 +109,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1.5
+  m_GravityScale: 0.8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -245,7 +245,6 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 7
   doubleJumpForce: 5.5
-  doubleJumpForce: 15
   injuriedRender: {fileID: 2057704910299615732}
 --- !u!114 &6753425078310847111
 MonoBehaviour:
