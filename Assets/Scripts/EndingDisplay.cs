@@ -19,8 +19,8 @@ public class EndingDisplay : MonoBehaviour
         GoodEndUI.SetActive(depressScore <= 0);
     }
 
-    public void FailUIDisplay(int endScore)
+    public void FailUIDisplay()
     {
-        FailEndUI.SetActive(endScore >= 100);
+        FailEndUI.SetActive(true);
     }
 }
