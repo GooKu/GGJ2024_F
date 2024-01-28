@@ -8,9 +8,7 @@ public class EndPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerMovement>().enabled = false;
-            var endDisplay = GameManger.FindFirstObjectByType<EndingDisplay>();
-            endDisplay.EndingUIDisplay(GameManger.Instance.GetDepress());
+            GameManger.Instance.GameEnd();
         }
     }
 }
