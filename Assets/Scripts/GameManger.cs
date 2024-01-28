@@ -78,4 +78,5 @@ public class GameManger : MonoBehaviour
             endingDisplay.EndingUIDisplay(playerData.currentDepress);
         }
     }
+
 }

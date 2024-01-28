@@ -243,7 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 10
+  jumpForce: 7
+  doubleJumpForce: 5.5
   doubleJumpForce: 15
   injuriedRender: {fileID: 2057704910299615732}
 --- !u!114 &6753425078310847111
