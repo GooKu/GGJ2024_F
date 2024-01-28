@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     {
         var player = GameManger.Instance.InitPlayer(startPos, vmFollow);
         player.GetComponent<PlayerDepress>().DamageEvent += updateGrayscale;
+        updateGrayscale(GameManger.Instance.GetDepress());
     }
 
     private void updateGrayscale(int depress)
