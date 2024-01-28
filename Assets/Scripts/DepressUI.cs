@@ -24,6 +24,9 @@ public class DepressUI : MonoBehaviour
     public void SliderUpdate()
     {
         playerDepress = FindAnyObjectByType<PlayerDepress>();
+
+        if(playerDepress == null) { return; }
+
         depressDisplay = (float)playerDepress.depress / playerDepress.maxDepress;
         depressSlider.value = depressDisplay;
     }
