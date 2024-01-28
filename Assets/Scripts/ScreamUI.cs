@@ -5,19 +5,22 @@ using UnityEngine.UI;
 
 public class ScreamUI : MonoBehaviour
 {
-    private ScreamItem screamItem;
-
     public Slider screamSlider;
-    private float scream, maxScream = 100, screamDisplay;
+    public int scream = 0;
+    private int maxScream = 100;
+    public float screamDisplay;
 
-    public void Start()
+    private void Update()
     {
-        scream = GameManger.Instance.GetPlayerData().currentScream;
+        SliderUpdate();
+        Debug.Log("scream = " + scream);
     }
-    
+
     public void SliderUpdate()
     {
-        screamDisplay = (float)screamItem.scream / maxScream;
+        screamDisplay = (float)scream / maxScream;
+        //screamDisplay = (float)GameManger.Instance.GetPlayerData().currentScream / maxScream;
+
         screamSlider.value = screamDisplay;
     }
 }
