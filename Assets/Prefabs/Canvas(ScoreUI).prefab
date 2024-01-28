@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 8918447121693228385}
   - component: {fileID: 2746785202997264827}
   - component: {fileID: 3425932281591011845}
+  - component: {fileID: 344430694583271497}
   m_Layer: 5
   m_Name: LaughImage
   m_TagString: Untagged
@@ -247,6 +248,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &344430694583271497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348017599757471838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac955a673dbdb6c49882c494c1414e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &359484839652409010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,11 +1509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ba3efd8c18fd64184600edad669d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 348017599757471838}
-  image2: {fileID: 5708212480026736528}
   laugh1: {fileID: 348017599757471838}
   laugh2: {fileID: 5708212480026736528}
-  run: 1
 --- !u!1 &4865463305109427914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1710,7 @@ GameObject:
   - component: {fileID: 8803079343312893863}
   - component: {fileID: 5466715761708107686}
   - component: {fileID: 2632622515540024311}
+  - component: {fileID: 5795698702850014594}
   m_Layer: 5
   m_Name: LaughImage2
   m_TagString: Untagged
@@ -1786,6 +1797,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5795698702850014594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708212480026736528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac955a673dbdb6c49882c494c1414e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6290591425219578642
 GameObject:
   m_ObjectHideFlags: 0

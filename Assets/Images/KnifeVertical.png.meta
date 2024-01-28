@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KnifeVertical_0: 1282037186190223624
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
