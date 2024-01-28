@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform startPos;
     [SerializeField] public Volume volume;
     [SerializeField] private bool vmFollow = true;
+    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
@@ -24,5 +25,10 @@ public class LevelManager : MonoBehaviour
         VolumeParameter<float> saturationShift = new VolumeParameter<float>();
         saturationShift.value = depress;
         colorAdjustments.saturation.SetValue(saturationShift);
+    }
+
+    public void End()
+    {
+        audioSource.Stop();
     }
 }

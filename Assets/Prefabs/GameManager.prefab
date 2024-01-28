@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSample: {fileID: 2742421012147006499, guid: 37dce95a46b15084ab3ba8550afd3ae9, type: 3}
   audioSource: {fileID: 8093494741483657749}
-  stageBGM: {fileID: 8300000, guid: 75ef6621594015142b51f641e711710a, type: 3}
   deathBGM: {fileID: 8300000, guid: 03f77d01ab4057747a1f06c66094b582, type: 3}
+  endBGM: {fileID: 8300000, guid: 719c5eb246018a846a919e9dddf52612, type: 3}
 --- !u!82 &8093494741483657749
 AudioSource:
   m_ObjectHideFlags: 0

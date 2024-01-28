@@ -13,8 +13,8 @@ public class GameManger : MonoBehaviour
     [SerializeField] private GameObject playerSample;
     [Header("Sound")]
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip stageBGM;
     [SerializeField] private AudioClip deathBGM;
+    [SerializeField] private AudioClip endBGM;
 
     private PlayerData playerData;
 
@@ -51,8 +51,6 @@ public class GameManger : MonoBehaviour
             var vm = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
             vm.Follow = player.transform;
         }
-        audioSource.clip = stageBGM;
-        audioSource.Play();
         return player;
     }
 
@@ -73,6 +71,8 @@ public class GameManger : MonoBehaviour
 
     private void playerDeadHandle()
     {
+        GameObject.FindFirstObjectByType<PlayerMovement>().enabled = false;
+
         var endingDisplay = GameObject.FindFirstObjectByType<EndingDisplay>();
         if (endingDisplay != null) 
         {
@@ -80,6 +80,23 @@ public class GameManger : MonoBehaviour
         }
 
         audioSource.clip = deathBGM;
+        audioSource.Play();
+    }
+
+    public void GameEnd()
+    {
+        GameObject.FindFirstObjectByType<PlayerMovement>().enabled = false;
+
+        var levelManager = GameObject.FindFirstObjectByType<LevelManager>();
+        levelManager.End();
+
+        var endingDisplay = GameObject.FindFirstObjectByType<EndingDisplay>();
+        if (endingDisplay != null)
+        {
+            endingDisplay.EndingUIDisplay(playerData.currentDepress);
+        }
+
+        audioSource.clip = endBGM;
         audioSource.Play();
     }
 }
