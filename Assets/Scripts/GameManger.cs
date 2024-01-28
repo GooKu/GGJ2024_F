@@ -14,6 +14,7 @@ public class GameManger : MonoBehaviour
     [Header("Sound")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip stageBGM;
+    [SerializeField] private AudioClip deathBGM;
 
     private PlayerData playerData;
 
@@ -77,6 +78,8 @@ public class GameManger : MonoBehaviour
         {
             endingDisplay.EndingUIDisplay(playerData.currentDepress);
         }
-    }
 
+        audioSource.clip = deathBGM;
+        audioSource.Play();
+    }
 }
