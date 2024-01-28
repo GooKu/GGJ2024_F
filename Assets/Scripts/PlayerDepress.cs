@@ -43,7 +43,7 @@ public class PlayerDepress : MonoBehaviour
 
     public void PlayerGetDamage(int damage)
     {
-        if(soundCoolDown)
+        if(!soundCoolDown)
         {
             audioSource.PlayOneShot(damageClip);
             StartCoroutine(coolDownSoundPlay());
