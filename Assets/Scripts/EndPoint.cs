@@ -9,7 +9,7 @@ public class EndPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // GameManger.Instance.GameEnd();
+            GameManger.Instance.GameEnd();
             // Debug.Log("GoodEnd");
             SceneManager.LoadScene("GoodEndScene"); //Force Open Scene GoodEnd
         }
