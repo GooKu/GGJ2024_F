@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GoodEndVideo : MonoBehaviour
@@ -15,6 +16,7 @@ public class GoodEndVideo : MonoBehaviour
     public Image image7;
     public Image image8;
     public TextMeshProUGUI thankText;
+    public Button MMButton;
     public Button QuitButton;
     public float imagesIntervals;
     void Start()
@@ -28,6 +30,7 @@ public class GoodEndVideo : MonoBehaviour
         image7.gameObject.SetActive(false);
         image8.gameObject.SetActive(false);
         thankText.enabled = false;
+        MMButton.gameObject.SetActive(false);
         QuitButton.gameObject.SetActive(false);
 
         StartCoroutine(AnimationStart());
@@ -52,7 +55,13 @@ public class GoodEndVideo : MonoBehaviour
         image8.gameObject.SetActive(true);
         yield return new WaitForSeconds(imagesIntervals);
         thankText.enabled = true;
+        MMButton.gameObject.SetActive(true);
         QuitButton.gameObject.SetActive(true);
+    }
+
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
