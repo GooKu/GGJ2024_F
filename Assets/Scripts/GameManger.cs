@@ -16,6 +16,8 @@ public class GameManger : MonoBehaviour
     [SerializeField] private AudioClip deathBGM;
     [SerializeField] private AudioClip endBGM;
 
+    public bool GoodEnd { get; private set; } = false;
+
     private PlayerData playerData;
 
     private void Awake()
@@ -83,12 +85,7 @@ public class GameManger : MonoBehaviour
 
     public void GameEnd()
     {
-        endHandle(endBGM);
-        var endingDisplay = GameObject.FindFirstObjectByType<EndingDisplay>();
-        if (endingDisplay != null)
-        {
-            endingDisplay.EndingUIDisplay(playerData.currentDepress);
-        }
+        GoodEnd = true;
     }
 
     private void playSoundHandle()
